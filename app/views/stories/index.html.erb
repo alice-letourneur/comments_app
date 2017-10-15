@@ -1,1 +1,11 @@
 <h1>All stories</h1>
+<ul>
+  <% @stories.each do | story | %>
+  <li>
+    <%= story.title %> (<%= story.comments.count %>)
+    <% if story.comments.count > 0 %>
+    - <%= link_to "view comments", story %>
+    <% end %>
+ </li>
+  <% end %>
+</ul>
